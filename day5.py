@@ -1464,4 +1464,6 @@ for printorder in correct_order:
 print("Part 1: ", total)
 # print(correct_order)
 
-
+for printorder in incorrect_order:
+	page_array = printorder.split(',')
+	
