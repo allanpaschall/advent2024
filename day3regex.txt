@@ -1,0 +1,15 @@
+%s/\(\d\))/\1)\r/g
+%s/.*mul(\(\d*,\d*\))/\1/g
+:g/^)/d
+:v/^\d/d
+%s/^/[/g
+:%s/$/],/g
+
+# this didn't work -- %s/don't().*do()//g
+
+:%s/don't/\rdon't/g
+:%s/do(/\rdo(/g
+:g/don't/d
+:%s/\(\d*,\d*\)[^\d].*/\1/g
+
+%s/\(mul(\d*,\d*)\)/\1\r/g
